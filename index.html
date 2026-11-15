@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tetris</title>
   <link rel="stylesheet" href="style.css" />
+  <script>
+    // Aplica el tema guardado antes de pintar (por defecto: dark)
+    try {
+      document.documentElement.dataset.theme =
+        localStorage.getItem('tetris-theme') === 'light' ? 'light' : 'dark';
+    } catch (e) {}
+  </script>
 </head>
 <body>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar tema"></button>
+
   <h1 class="game-title">TETRIS</h1>
 
   <div class="wrapper">
